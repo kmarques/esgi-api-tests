@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "cucumber": "cucumber-js --publish-quiet"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,7 @@
     "sequelize": "^6.19.0"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^8.2.0",
     "jest": "^28.1.0",
     "supertest": "^6.2.3"
   }

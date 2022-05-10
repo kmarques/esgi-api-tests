@@ -1,4 +1,4 @@
-GET http://localhost:3000/products
+GET http://localhost:8089/teachers
 
 ###
 POST http://localhost:3000/products
