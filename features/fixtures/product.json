@@ -6,6 +6,9 @@
     },
     "product2": {
       "name": "Product 2"
+    },
+    "product3": {
+      "name": "{{product2.name}}"
     }
   }
 }
