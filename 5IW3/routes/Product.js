@@ -7,6 +7,11 @@ router.get("", async (req, res) => {
   res.send(products);
 });
 
+router.get("/:id", async (req, res) => {
+  const products = await Product.findByPk(parseInt(req.params.id));
+  res.send(products);
+});
+
 router.post("", async (req, res) => {
   try {
     const product = await Product.create(req.body);

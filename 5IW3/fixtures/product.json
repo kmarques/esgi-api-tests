@@ -1,0 +1,15 @@
+{
+  "model": "Product",
+  "data": {
+    "scissor1": {
+      "name": "Scissor"
+    },
+    "knife1": {
+      "name": "Knife"
+    },
+    "knife2": {
+      "name": "{{knife1.name}}"
+    }
+  },
+  "depends": ["user.json"]
+}
