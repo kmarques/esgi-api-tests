@@ -21,8 +21,10 @@ module.exports = async function fixtureLoader(...paths) {
     for (let key in fixture.data) {
       let record = fixture.data[key];
       interpolate(record);
-      record = await Model.create(record);
-      ReferenceManager.setReference(key, record);
+      const value = await Model.create(record);
+      ReferenceManager.setReference(key, value);
+      if (fixture?.options?.preserve)
+        ReferenceManager.setReference(key + ".fixture", record);
     }
   }
 };

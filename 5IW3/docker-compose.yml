@@ -10,5 +10,13 @@ services:
     volumes:
       - db-data:/var/lib/postgresql
 
+  test:
+    image: node:alpine
+    volumes:
+      - ./:/app
+    working_dir: /app
+    environment:
+      DB: "postgres://root:password@db:5432/db"
+    command: sh -c "node migrate.js ; npm install; npm test"
 volumes:
   db-data: {}

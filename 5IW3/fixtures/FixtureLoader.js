@@ -1,4 +1,4 @@
-const db = require("../../5IW3/models");
+const db = require("../models");
 const ReferenceManager = require("./ReferenceManager");
 
 function interpolate(obj) {

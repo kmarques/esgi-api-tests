@@ -10,5 +10,8 @@
     "product3": {
       "name": "{{product2.name}}"
     }
+  },
+  "options": {
+    "preserve": true
   }
 }
