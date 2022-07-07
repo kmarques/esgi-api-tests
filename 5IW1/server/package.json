@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cucumber": "cucumber-js --publish-quiet",
     "test": "jest",
     "start": "nodemon index.js",
     "migrate": "node migrate.js",
