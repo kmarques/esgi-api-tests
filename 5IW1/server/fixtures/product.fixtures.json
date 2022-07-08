@@ -1,0 +1,11 @@
+{
+  "model": "Product",
+  "data": {
+    "spoon": {
+      "name": "Spoon"
+    },
+    "knife": {
+      "name": "Knife"
+    }
+  }
+}

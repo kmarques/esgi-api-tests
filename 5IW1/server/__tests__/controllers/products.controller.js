@@ -1,13 +1,19 @@
 const request = require("supertest");
+const { connection } = require("../../models");
 
 afterAll(() => {
-  const { connection } = require("../../models");
   connection.close();
 });
 
-afterEach(() => {
-  const { connection } = require("../../models");
-  connection.query('DELETE FROM "Products"');
+beforeAll(async () => {
+  connection.constructor._cls = new Map();
+});
+beforeEach(async () => {
+  const trx = await connection.transaction();
+  connection.constructor._cls.set("transaction", trx);
+});
+afterEach(async () => {
+  await connection.constructor._cls.get("transaction").rollback();
 });
 
 describe("Products", () => {

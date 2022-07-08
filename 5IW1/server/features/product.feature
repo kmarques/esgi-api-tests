@@ -15,3 +15,12 @@ Feature: Product
         Then I should get a 201 response code
         And The property "id" should be present in the response
         And The property "name" should be "Product 1"
+
+    Scenario: should update a product
+        Given I have a payload
+            | name | Product 1 |
+        And I load "product.fixtures.json"
+        When I call "PUT" "/products/{{spoon.id}}" with the payload
+        Then I should get a 200 response code
+        And The property "id" should be present in the response
+        And The property "name" should be "Product 1"
